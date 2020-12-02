@@ -48,6 +48,12 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
     left: 2%;
     padding: 5px;
 }
+
+.loadSpinner{
+    position: absolute;
+    bottom: 17.5px;
+    right: 100px
+}
 .tweetDisplay{
     position: relative;
     display: flex;
