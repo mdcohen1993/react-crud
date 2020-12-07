@@ -1,15 +1,26 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
 import './Components/TweetForm.css'
-import TweetForm from './Components/TweetForm.jsx';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import Home from './Pages/Home';
+import { Profile } from './Pages/Profile';
+import { UserContext } from './UserContext';
+import { useState } from 'react'
 
+export default function App() {
+const [user, setUser] = useState('Max')
 
-export default function App(){
-    return (
-      <Container fluid className='App'>
-        <TweetForm />
-      </Container>
-    );
+  return (
+    <UserContext.Provider value={[user, setUser ]}>
+    <Router>
+        <Route path='/' exact component={Home} />
+        <Route path='/Profile' component={Profile} />
+    </Router>
+    </UserContext.Provider>
+  );
 }
 
