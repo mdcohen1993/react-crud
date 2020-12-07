@@ -1,21 +1,13 @@
-<<<<<<< HEAD
 import { React, useState, useContext, useEffect } from "react";
 import { Form, Button, Alert, Row, Spinner } from "react-bootstrap";
 import "./TweetForm.css";
 import TweetItem from "./TweetItem";
 import { UserContext } from '../UserContext';
-=======
-import { React, useState, useEffect } from 'react';
-import { Form, Button, Alert, Row, Spinner } from 'react-bootstrap';
-import './TweetForm.css'
-import TweetItem from './TweetItem'
 
->>>>>>> 582c32f820a739750ac6830fdb199e4008a566ce
 
 
 export default function TweetForm(props) {
   const [currentTweet, setCurrentTweet] = useState("");
-<<<<<<< HEAD
   const [loadSpinner, setLoadSpinner] = useState(false);
   const [ user, setUser ] = useContext(UserContext)
   const timeStamp = new Date(Date.now());
@@ -94,7 +86,6 @@ export default function TweetForm(props) {
       </>
     );
   }
-=======
   const [loadSpinner, setLoadSpinner] = useState(false)
   const timeStamp = new Date(Date.now())
   const url = "https://micro-blogging-dot-full-stack-course-services.ew.r.appspot.com/tweet";
@@ -146,4 +137,3 @@ export default function TweetForm(props) {
 
 
 
->>>>>>> 582c32f820a739750ac6830fdb199e4008a566ce
