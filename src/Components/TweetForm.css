@@ -49,13 +49,10 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
     padding: 5px;
 }
 
-<<<<<<< HEAD
 .m-auto{
     color:white
 }
 
-=======
->>>>>>> 582c32f820a739750ac6830fdb199e4008a566ce
 .loadSpinner{
     position: absolute;
     bottom: 17.5px;

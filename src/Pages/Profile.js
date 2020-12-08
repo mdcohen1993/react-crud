@@ -1,34 +1,33 @@
 import "../App.css";
 import { Form, Container, Button } from "react-bootstrap";
 import NavBar from "../Components/NavBar";
-import React, { useContext, useEffect } from 'react';
-import { UserContext } from '../UserContext'
-
+import React, { useContext, useEffect } from "react";
+import { UserContext } from "../UserContext";
 
 export function Profile(props) {
-  const [user, setUser ] = useContext(UserContext);
+  const [user, setUser] = useContext(UserContext);
 
-  const addUser = e => {
-    const targetInput = e.target.value
+  const addUser = (e) => {
+    const targetInput = e.target.value;
     e.preventDefault();
     setUser([
       {
-        userName: JSON.parse(targetInput)
-      }
+        userName: JSON.parse(targetInput),
+      },
     ]);
-    console.log(user)
+    console.log(user);
   };
-  useEffect(()=>{
-    localStorage.setItem('tweetArray', user);
+  useEffect(() => {
+    localStorage.setItem("tweetArray", user);
     console.log(user);
   });
 
-    useEffect(()=>{
-      const data = localStorage.getItem('tweetArray');
-      if(data){
-        setUser(data.tweetArray);
-      }
-    }, [])
+  useEffect(() => {
+    const data = localStorage.getItem("tweetArray");
+    if (data) {
+      setUser(data.tweetArray);
+    }
+  }, []);
 
   return (
     <Container>
@@ -39,9 +38,9 @@ export function Profile(props) {
         <Form.Control
           className="profileInput"
           type="text"
-          onChange={(e)=>setUser(e.target.value)}
+          onChange={(e) => setUser(e.target.value)}
         />
-        <Button variant="primary" className="saveBtn" type="submit" >
+        <Button variant="primary" className="saveBtn" type="submit">
           Save
         </Button>{" "}
       </Form>
