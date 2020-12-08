@@ -4,6 +4,7 @@ import NavBar from "../Components/NavBar";
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../UserContext";
 
+
 export function Profile(props) {
   const [user, setUser] = useContext(UserContext);
 
@@ -27,7 +28,7 @@ export function Profile(props) {
     if (data) {
       setUser(data.tweetArray);
     }
-  }, []);
+  });
 
   return (
     <Container>

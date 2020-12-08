@@ -3,15 +3,13 @@ import { React, useState, useEffect } from "react";
 export default function TweetItem(props) {
   const url =
     "https://micro-blogging-dot-full-stack-course-services.ew.r.appspot.com/tweet";
-  const [tweets, updateTweets] = useState([]);
-  var tweetIds = {}
-
-  useEffect(() => {
-    setInterval(()=>{
-      fetch(url)
+  const [tweets, setTweets] = useState([]);
+  let tweetIds = {}
+  function fetchTweets (){
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        var newTweets = []
+        let newTweets = []
         for (let i = 0; i < data.tweets.length; i++){
           if (!(data.tweets[i].id in tweetIds) ){
             newTweets.push(data.tweets[i])
@@ -23,11 +21,12 @@ export default function TweetItem(props) {
             tweets.push(newTweets[i])
           }
           console.log("updating tweets: ", tweets)
-          updateTweets(tweets);
         }
-      });
-    },5000)
-  }, []);
+      })
+      console.log("Bobs tweets", tweets)
+      return tweets
+    }
+  fetchTweets()
 
   console.log("rendering tweets: ", tweets);
   const tweetList = tweets.map((tweet) => {

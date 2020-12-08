@@ -27,7 +27,7 @@ export default function TweetForm(props) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         content: currentTweet,
-        userName: localStorage.tweetArray,
+        userName: user,
         date: timeStamp,
       }),
     };
