@@ -1,7 +1,6 @@
 import "../App.css";
 import { Form, Container, Button } from "react-bootstrap";
-import NavBar from "../Components/NavBar";
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { UserContext } from "../UserContext";
 
 
@@ -32,10 +31,9 @@ export function Profile(props) {
 
   return (
     <Container>
-      <NavBar className="NavBar" />
       <h1 className="profileHeader">Profile</h1>
       <Form className="form" onSubmit={addUser}>
-        <Form.Label>User Name</Form.Label>
+        <Form.Label >User Name</Form.Label>
         <Form.Control
           className="profileInput"
           type="text"

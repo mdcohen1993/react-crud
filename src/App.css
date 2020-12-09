@@ -33,6 +33,19 @@ body{
   right: 50px;
 }
 
-.NavBar{
-  
+.loginLabel{
+  color: white;
 }
+.loginInput{
+resize: none;
+width: 500px;
+height: 200px;
+}
+.loginForm{
+  margin: auto
+}
+
+.loginContainer{
+  color:white;
+}
+

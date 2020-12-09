@@ -1,4 +1,4 @@
-import { React, useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Form, Button, Alert, Row, Spinner } from "react-bootstrap";
 import "./TweetForm.css";
 import TweetItem from "./TweetItem";
@@ -12,12 +12,16 @@ export default function TweetForm(props) {
   const url =
     "https://micro-blogging-dot-full-stack-course-services.ew.r.appspot.com/tweet";
 
+const handleChange =(e) => {
+    setUser(e.target.value)
+  }
+
   useEffect(() => {
     const data = localStorage.getItem("tweetArray");
     if (data) {
       setUser(data.tweetArray);
     }
-  }, []);
+  });
 
   const addTweet = (e) => {
     e.preventDefault();
@@ -41,6 +45,7 @@ export default function TweetForm(props) {
       .catch((e) => console.log(e));
   };
 
+
   return (
     <>
       <Row className="justify-content-center">
@@ -53,7 +58,7 @@ export default function TweetForm(props) {
               name="tweet[currentTweet]"
               type="text"
               placeholder="What you have in mind..."
-              onChange={(e) => setCurrentTweet(e.target.value)}
+              onChange={handleChange}
             />
           </Form.Group>
           <Button

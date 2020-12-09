@@ -1,11 +1,11 @@
-import { React, useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function TweetItem(props) {
   const url =
     "https://micro-blogging-dot-full-stack-course-services.ew.r.appspot.com/tweet";
   const [tweets, setTweets] = useState([]);
   let tweetIds = {}
-  function fetchTweets (){
+  function fetchTweets(){
     fetch(url)
       .then((response) => response.json())
       .then((data) => {

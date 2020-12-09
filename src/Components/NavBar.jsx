@@ -6,6 +6,8 @@ export default function NavBar(props){
             <Nav className='m-left'>
                 <Nav.Link className='navLink' href='/'>Home</Nav.Link>
                 <Nav.Link className='navLink' href='/Profile'>Profile</Nav.Link>
+                <Nav.Link className='navLink' href='/Login'>Login</Nav.Link>
+                <Nav.Link className='navLink' href='/SignUp'>Sign Up</Nav.Link>
             </Nav>
         </Navbar>
     )
