@@ -9,10 +9,11 @@ export default function Signup(){
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
-    const { signup } = useAuth()
+    const { signup, currentUser, logout } = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const history = useHistory()
+
 
 
     async function handleSubmit(e){
@@ -32,11 +33,24 @@ export default function Signup(){
         setLoading(false)
     }
 
+    async function handleLogout() {
+      setError("")
+  
+      try {
+        await logout()
+        history.push("/login")
+        console.log('logout success')
+      } catch {
+        setError("Failed to log out")
+      }
+    }
+
     return(
         <Container className='loginContainer'>
             <h1>Sign up</h1>
             <h4>Welcome!</h4>
-        <Form className="signupForm" onSubmit={handleSubmit}>
+            <Button type='click' disabled={loading} onClick={handleLogout}>Log out</Button>
+        <Form className="loginForm" onSubmit={handleSubmit}>
             <Form.Group>
             <Form.Label className='loginLabel'>Enter User Name</Form.Label>
             <Form.Control
