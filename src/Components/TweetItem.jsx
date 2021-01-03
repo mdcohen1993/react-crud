@@ -20,11 +20,9 @@ export default function TweetItem(props) {
           for(let i = 0; i < newTweets.length; i++){
             tweets.push(newTweets[i])
           }
-          console.log("updating tweets: ", tweets)
+          return tweets
         }
       })
-      console.log("Bobs tweets", tweets)
-      return tweets
     }
   fetchTweets()
 

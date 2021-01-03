@@ -6,7 +6,7 @@ export default function Home(props){
     const { currentUser } = useAuth()
          return(
              <div>
-                {currentUser && <TweetForm /> }
+                {currentUser && <TweetForm></TweetForm> }
             </div>
     )
 }

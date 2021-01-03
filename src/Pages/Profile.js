@@ -17,6 +17,9 @@ export function Profile(props) {
     ]);
     console.log(user);
   };
+
+
+
   useEffect(() => {
     localStorage.setItem("tweetArray", user);
     console.log(user);

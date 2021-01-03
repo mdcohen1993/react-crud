@@ -48,7 +48,7 @@ export default function Signup(){
     return(
         <Container className='loginContainer'>
             <h1>Sign up</h1>
-            <h4>Welcome!</h4>
+            <h4>Welcome {String(currentUser)}!</h4>
             <Button type='click' disabled={loading} onClick={handleLogout}>Log out</Button>
         <Form className="loginForm" onSubmit={handleSubmit}>
             <Form.Group>
@@ -73,6 +73,8 @@ export default function Signup(){
               placeholder="Enter Password"
               ref={passwordRef}
             />
+            </Form.Group>
+            <Form.Group>
             <Form.Label className='loginLabel'>Confirm password</Form.Label>
             <Form.Control
               required

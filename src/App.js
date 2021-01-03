@@ -14,6 +14,11 @@ import Signup from './Pages/Signup'
 import { AuthProvider } from './AuthContext'
 import Login from './Pages/Login'
 import PrivateRoute from './Pages/PrivateRoute'
+import firebase from 'firebase'
+
+firebase.firestore().collection('tweets').add({
+  title: 'Joe Biden'
+})
 
 
 export default function App() {

@@ -49,3 +49,7 @@ height: 200px;
   color:white;
 }
 
+.loginForm{
+  margin: auto;
+  justify-content: center
+}

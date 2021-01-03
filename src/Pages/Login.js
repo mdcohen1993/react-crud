@@ -31,7 +31,7 @@ export default function Login() {
         return (
             <Container className='loginContainer'>
                 <h1>Log in</h1>
-                <h4>Welcome!</h4>
+                <h4>Welcome back!</h4>
                 <Form className="signupForm" onSubmit={handleSubmit}>
                     <Form.Group>
                         <Form.Label className='loginLabel'>Enter User Name</Form.Label>
